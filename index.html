@@ -3,11 +3,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Java </title>
 </head>
 <body>
+    
         <nav id="navbar">
-            
+            <div class="menu-close">
+                <p class=" fa-solid fa-square-xmark"></p>
+            </div>
             <header class="header-nav"><img class="logo" src="https://www.freepnglogos.com/uploads/assassins-creed-logo-png/meaning-assassins-creed-logo-and-symbol-history-and-0.png" alt=""><br>Assassins Creed <span>video game </span></header>        
             
             <ul>
@@ -27,10 +31,14 @@
                 <a  class="nav-link" href="#sequels">Sequels</a>
             </li>
         </ul>
+       
     </nav>
-    
+    <div class="menu-open">
+            <p class="fa-solid fa-bars"></p>
+    </div>
     <main id="main-doc">
-        <button class="menu"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Menu_button.svg"></button>
+        
+    <div id="main-section">
         <section id="Introduction" class="main-section"> 
             <header>Introduction </header>
             <hr>
@@ -89,15 +97,29 @@
                 <p><code>Assassin's Creed II</code> was released in the United States and Canada on November 17, 2009, and in Europe on November 20, 2009.[67]</p>
 
         </section>
+    </div>
     </main>
     <script>
         const sidebar = document.querySelector('#navbar');
         const maindoc = document.querySelector('#main-doc');
-        const toggleButton = document.querySelector('.menu');
-      
-        toggleButton.addEventListener('click', () => {
-        maindoc.classList.toggle('open-menu');
-        sidebar.classList.toggle('open-menu');
+        const menuButton = document.querySelector('.menu-open');
+        const openButton = document.querySelector('.menu-open');
+        const closeButton = document.querySelector('.menu-close');
+     
+        openButton.addEventListener('click', () => {
+        maindoc.classList.add('open-menu');
+        sidebar.classList.add('open-menu');
+        menuButton.classList.add('open-menu');
+        maindoc.classList.remove('close-menu');
+        sidebar.classList.remove('close-menu');
+
+      });
+        closeButton.addEventListener('click', () => {
+        maindoc.classList.add('close-menu');
+        sidebar.classList.add('close-menu');
+        maindoc.classList.remove('open-menu');
+        sidebar.classList.remove('open-menu');
+        menuButton.classList.remove('open-menu');
       });
       </script>
 </body>

@@ -57,6 +57,7 @@ code {
 }
 .main-section p{
     font-size: 15px;
+    text-align: justify;
 }
 hr {
     background-color: black;
@@ -64,42 +65,64 @@ hr {
     border: none;
     width: 100%;
 }
-.menu {
+.menu-open {
     display: none;
+    margin: 0;
+}
+.menu-close {
+    display: none;
+    margin: 0;
 }
 @media only screen and (max-width: 750px) {
-    .menu {
+    .menu-open {
         display: block;
+       
+        border: none;
+        margin: 0;
+        font-size: 30px;
+    }
+    .menu-open p {
+        margin: 0;
     }
     #navbar {
         width: 0;
-       
+        padding: 0;
     }
     #main-doc {
-        margin-left: 0;
+        margin-left: 10px;
     }
-    
+    .menu-close {
+        display: block;
+        text-align: right;
+        font-size: 30px;
+        margin: 0;
+        width: auto;
+    }
+    .menu-close p{
+        margin: 0;
+    }
+
 }
 #navbar.open-menu {
-    
     width: 190px;
-    
   }
-  
-  #main-doc.open-menu {
-    margin-left: 210px;
-  }
-  
-  #navbar {
-    transition: width 0.5s ease;
+#navbar.close-menu {
+    width: 0;
   }
 
-.menu{
-    border: none;
-    background-color: white;
-}
-.menu img{
-    width: 40px;
-    height: 40px;
-}
-  
+#main-doc.open-menu {
+    margin-left: 210px;
+  }
+  #main-doc.close-menu {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+#navbar {
+    transition: width 0.5s ease;
+  }
+.menu-open.open-menu {
+        display: none;
+        transition: 0.5s;
+ }
+
